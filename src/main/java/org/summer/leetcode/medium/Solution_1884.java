@@ -27,7 +27,7 @@ import java.util.Arrays;
  * 如果第二枚鸡蛋碎了，但第一枚没碎，可知 f = 1；
  * 否则，当两个鸡蛋都没碎时，可知 f = 2。
  */
-public class Solution_1184 {
+public class Solution_1884 {
     /**
      *
      * 对于n层楼，第一个鸡蛋扔到任意k层
@@ -48,7 +48,7 @@ public class Solution_1184 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution_1184().twoEggDrop(2));
-        System.out.println(new Solution_1184().twoEggDrop(100));
+        System.out.println(new Solution_1884().twoEggDrop(2));
+        System.out.println(new Solution_1884().twoEggDrop(100));
     }
 }
