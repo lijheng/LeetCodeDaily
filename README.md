@@ -13,4 +13,5 @@ LeetCode每日一题
 [910. 最小差值 II](./src/main/java/org/summer/leetcode/medium/Solution_910.java)  
 [3222. 求出硬币游戏的赢家](./src/main/java/org/summer/leetcode/easy/Solution_3222.java)  
 [3254. 长度为 K 的子数组的能量值 I](./src/main/java/org/summer/leetcode/medium/Solution_3254.java)  
-[2270. 分割数组的方案数](./src/main/java/org/summer/leetcode/medium/Solution_2270.java)  
+[2270. 分割数组的方案数](./src/main/java/org/summer/leetcode/medium/Solution_2270.java)
+[3065. 超过阈值的最少操作数 I](./src/main/java/org/summer/leetcode/easy/Solution_3065.java)  
