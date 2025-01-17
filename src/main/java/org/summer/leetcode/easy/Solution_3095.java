@@ -62,13 +62,48 @@ public class Solution_3095 {
      * 滑动窗口
      */
     public int minimumSubarrayLength2(int[] nums, int k) {
-        //todo
-        return 0;
+        int left = 0, right = 0;
+        int n = nums.length;
+        int ans = Integer.MAX_VALUE;
+        // 难点在于或运算如何还原，此处用数组将每个元素各位的和进行记录，方便还原,由于为非负整数，故只记录31位
+        // 如: A= 010 B = 111,   A | B = 111 此时bits中则存储 bits[2] = 1, bits[1] = 2, bits[0] = 1
+        // 若需要将 A从运算中取消，则bits中的值则位 bits[2] = 1 - 0 = 1, bits[1] = 2-1 = 1, bits[0] = 1-0 = 1，组合得 111
+        int bitCount = 31;
+        int[] bits = new int[bitCount];
+        while (right < n) {
+            for (int i = 0; i < bitCount; i++) {
+                bits[i] += (nums[right] >> i) & 1;
+            }
+            while (left <= right && calc(bits) >= k) {
+                ans = Math.min(ans, right - left + 1);
+                for (int i = 0; i < bitCount; i++) {
+                    bits[i] -= (nums[left] >> i) & 1;
+                }
+                left++;
+            }
+            right++;
+        }
+        return ans == Integer.MAX_VALUE ? -1 : ans;
     }
+
+    private int calc(int[] bits) {
+        int ans = 0;
+        for (int i = 0; i < bits.length; i++) {
+            if (bits[i] > 0) {
+                ans |= 1 << i;
+            }
+        }
+        return ans;
+    }
+
     public static void main(String[] args) {
         Solution_3095 solution = new Solution_3095();
         System.out.println("minimumSubarrayLength:");
         System.out.println(solution.minimumSubarrayLength(new int[]{1, 2, 3}, 2));
         System.out.println(solution.minimumSubarrayLength(new int[]{2, 1, 8}, 10));
+
+        System.out.println("minimumSubarrayLength2:");
+        System.out.println(solution.minimumSubarrayLength2(new int[]{1, 2, 3}, 2));
+        System.out.println(solution.minimumSubarrayLength2(new int[]{2, 1, 8}, 10));
     }
 }
