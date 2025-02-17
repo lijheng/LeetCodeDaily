@@ -22,3 +22,4 @@ LeetCode每日一题
 [1456. 定长子串中元音的最大数目](./src/main/java/org/summer/leetcode/medium/Solution_1456.java)  
 [3. 无重复字符的最长子串](./src/main/java/org/summer/leetcode/medium/Solution_3.java)  
 [2239. 找到最接近 0 的数字](./src/main/java/org/summer/leetcode/easy/Solution_2239.java)  
+[1287. 有序数组中出现次数超过25%的元素](./src/main/java/org/summer/leetcode/easy/Solution_1287.java)  
