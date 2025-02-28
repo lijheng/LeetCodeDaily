@@ -1,5 +1,8 @@
 package org.summer.leetcode.hard;
 
+import java.util.LinkedList;
+import java.util.ListIterator;
+
 /**
  * 2296. 设计一个文本编辑器
  * 困难
@@ -88,6 +91,74 @@ public class Solution_2296 {
         }
     }
 
+    /**
+     * 使用自定义容器来存储文本
+     * */
+    public static class TextEditor2 {
+
+        private final LinkedList<Character> left = new LinkedList<>();
+        private final LinkedList<Character> right = new LinkedList<>();
+
+        public TextEditor2() {
+
+        }
+
+        public void addText(String text) {
+            for (char c : text.toCharArray()) {
+                left.addLast(c);
+            }
+        }
+
+        public int deleteText(int k) {
+            int i = 0;
+            for (; i < k; i++) {
+                if (left.pollLast() == null) {
+                    break;
+                }
+            }
+            return i;
+        }
+
+        public String cursorLeft(int k) {
+            for (int i = 0; i < k; i++) {
+                Character c = left.pollLast();
+                if (c == null) {
+                    break;
+                }
+                right.push(c);
+            }
+
+            return getString(left);
+        }
+
+        /**
+         * 返回最后10个字母组成的字符串
+         */
+        private String getString(LinkedList<Character> list) {
+            StringBuilder builder = new StringBuilder();
+            ListIterator<Character> iterator = list.listIterator(list.size());
+            for (int i = 0; i < 10; i++) {
+                if (!iterator.hasPrevious()) {
+                    break;
+                }
+                Character c = iterator.previous();
+                builder.insert(0, c);
+            }
+            return builder.toString();
+        }
+
+        public String cursorRight(int k) {
+            for (int i = 0; i < k; i++) {
+                Character c = right.poll();
+                if (c == null) {
+                    break;
+                }
+                left.addLast(c);
+            }
+            return getString(left);
+        }
+    }
+
     public static void main(String[] args) {
         TextEditor textEditor = new TextEditor();
         textEditor.addText("leetcode");
@@ -97,5 +168,15 @@ public class Solution_2296 {
         System.out.println(textEditor.cursorLeft(8));
         System.out.println(textEditor.deleteText(10));
         System.out.println(textEditor.cursorRight(6));
+
+        System.out.println("TextEditor2:");
+        TextEditor2 textEditor2 = new TextEditor2();
+        textEditor2.addText("leetcode");
+        System.out.println(textEditor2.deleteText(4));
+        textEditor2.addText("practice");
+        System.out.println(textEditor2.cursorRight(3));
+        System.out.println(textEditor2.cursorLeft(8));
+        System.out.println(textEditor2.deleteText(10));
+        System.out.println(textEditor2.cursorRight(6));
     }
 }
