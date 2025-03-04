@@ -24,3 +24,5 @@ LeetCode每日一题
 [2239. 找到最接近 0 的数字](./src/main/java/org/summer/leetcode/easy/Solution_2239.java)  
 [1287. 有序数组中出现次数超过25%的元素](./src/main/java/org/summer/leetcode/easy/Solution_1287.java)  
 [2296. 设计一个文本编辑器](./src/main/java/org/summer/leetcode/hard/Solution_2296.java)  
+[2353. 设计食物评分系统](./src/main/java/org/summer/leetcode/medium/Solution_2353.java)  
+[131. 分割回文串](./src/main/java/org/summer/leetcode/medium/Solution_131.java)  
