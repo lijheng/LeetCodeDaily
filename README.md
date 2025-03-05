@@ -27,3 +27,4 @@ LeetCode每日一题
 [2353. 设计食物评分系统](./src/main/java/org/summer/leetcode/medium/Solution_2353.java)  
 [131. 分割回文串](./src/main/java/org/summer/leetcode/medium/Solution_131.java)  
 [1745. 分割回文串 IV](./src/main/java/org/summer/leetcode/hard/Solution_1745.java)  
+[1328. 破坏回文串](./src/main/java/org/summer/leetcode/medium/Solution_1328.java)  
