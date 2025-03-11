@@ -28,3 +28,6 @@ LeetCode每日一题
 [131. 分割回文串](./src/main/java/org/summer/leetcode/medium/Solution_131.java)  
 [1745. 分割回文串 IV](./src/main/java/org/summer/leetcode/hard/Solution_1745.java)  
 [1328. 破坏回文串](./src/main/java/org/summer/leetcode/medium/Solution_1328.java)  
+[2597. 美丽子集的数目](./src/main/java/org/summer/leetcode/medium/Solution_2597.java)  
+[2070. 每一个查询的最大美丽值](./src/main/java/org/summer/leetcode/medium/Solution_2070.java)  
+[2269. 找到一个数字的 K 美丽值](./src/main/java/org/summer/leetcode/easy/Solution_2269.java)  
